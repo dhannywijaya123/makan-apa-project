@@ -1,21 +1,21 @@
 const database = {
     "Rice&Noodle" : {
-        "Rice&Noodle1": { name: "Nasi Goreng", id: "Rice&Noodle1", class: "Rice&Noodle-Nasi card-styling",  img: "https://i.ibb.co/9nPTNM5/Nasi-Goreng.png" },
-        "Rice&Noodle2": { name: "Nasi Padang", id: "Rice&Noodle2", class: "Rice&Noodle-Nasi card-styling",  img: "https://i.ibb.co/fS5yMwv/Nasi-Padang.png" },
-        "Rice&Noodle3": { name: "Nasi Uduk",   id: "Rice&Noodle3", class: "Rice&Noodle-Nasi card-styling",  img: "https://i.ibb.co/SRJWH8f/Nasi-Uduk.png" },
-        "Rice&Noodle4": { name: "Nasi Kuning", id: "Rice&Noodle4", class: "Rice&Noodle-Nasi card-styling",  img: "https://i.ibb.co/WpZ1ypR/Nasi-Kuning.png" },
-        "Rice&Noodle5": { name: "Nasi Liwet",  id: "Rice&Noodle5", class: "Rice&Noodle-Nasi card-styling",  img: "https://i.ibb.co/ZYzNyjS/Nasi-Liwet.png" },
-        "Rice&Noodle6": { name: "Mie Goreng",  id: "Rice&Noodle6", class: "Rice&Noodle-Mie card-styling",   img: "https://i.ibb.co/kmrzbrC/Mie-Goreng.png" },
-        "Rice&Noodle7": { name: "Mie Ayam",    id: "Rice&Noodle7", class: "Rice&Noodle-Mie card-styling",   img: "https://i.ibb.co/sH3WCJ5/Mie-Ayam.png" },
-        "Rice&Noodle8": { name: "Mie Aceh",    id: "Rice&Noodle8", class: "Rice&Noodle-Kuah card-styling",  img: "https://i.ibb.co/HnX0jBY/Mie-Aceh.png" },
-        "Rice&Noodle9": { name: "Mie Jawa",    id: "Rice&Noodle9", class: "Rice&Noodle-Mie card-styling",   img: "https://i.ibb.co/fN8rSjr/Mie-Jawa.png" },
-        "Rice&Noodle10": { name: "Mie Bakso",  id: "Rice&Noodle10", class: "Rice&Noodle-Kuah card-styling", img: "https://i.ibb.co/bNftSJF/Mie-Bakso.png" }
+        "Rice&Noodle-1": { name: "Nasi Goreng", id: "Rice&Noodle-1", class: "Rice&Noodle-Nasi card-styling",  img: "https://i.ibb.co/9nPTNM5/Nasi-Goreng.png" },
+        "Rice&Noodle-2": { name: "Nasi Padang", id: "Rice&Noodle-2", class: "Rice&Noodle-Nasi card-styling",  img: "https://i.ibb.co/fS5yMwv/Nasi-Padang.png" },
+        "Rice&Noodle-3": { name: "Nasi Uduk",   id: "Rice&Noodle-3", class: "Rice&Noodle-Nasi card-styling",  img: "https://i.ibb.co/SRJWH8f/Nasi-Uduk.png" },
+        "Rice&Noodle-4": { name: "Nasi Kuning", id: "Rice&Noodle-4", class: "Rice&Noodle-Nasi card-styling",  img: "https://i.ibb.co/WpZ1ypR/Nasi-Kuning.png" },
+        "Rice&Noodle-5": { name: "Nasi Liwet",  id: "Rice&Noodle-5", class: "Rice&Noodle-Nasi card-styling",  img: "https://i.ibb.co/ZYzNyjS/Nasi-Liwet.png" },
+        "Rice&Noodle6" : { name: "Mie Goreng",  id: "Rice&Noodle6", class: "Rice&Noodle-Mie card-styling",   img: "https://i.ibb.co/kmrzbrC/Mie-Goreng.png" },
+        "Rice&Noodle7" : { name: "Mie Ayam",    id: "Rice&Noodle7", class: "Rice&Noodle-Mie card-styling",   img: "https://i.ibb.co/sH3WCJ5/Mie-Ayam.png" },
+        "Rice&Noodle8" : { name: "Mie Aceh",    id: "Rice&Noodle8", class: "Rice&Noodle-Kuah card-styling",  img: "https://i.ibb.co/HnX0jBY/Mie-Aceh.png" },
+        "Rice&Noodle9" : { name: "Mie Jawa",    id: "Rice&Noodle9", class: "Rice&Noodle-Mie card-styling",   img: "https://i.ibb.co/fN8rSjr/Mie-Jawa.png" },
+        "Rice&Noodle10": { name: "Mie Bakso",   id: "Rice&Noodle10", class: "Rice&Noodle-Kuah card-styling", img: "https://i.ibb.co/bNftSJF/Mie-Bakso.png" }
     },
     Salads: {
-        Salads1: { name: "Gado-Gado",    id: "Salads1", class: "Salads-Indonesian card-styling",  img: "https://i.ibb.co/q5910kb/Gado-gado.png" },
-        Salads2: { name: "Karedok",      id: "Salads2", class: "Salads-Indonesian card-styling",  img: "https://i.ibb.co/pJph6nR/Karedok.png" },
-        Salads3: { name: "Pecel",        id: "Salads3", class: "Salads-Indonesian card-styling",  img: "https://i.ibb.co/wrMYzWx/Pecel.png" },
-        Salads4: { name: "Gudeg Jogja",  id: "Salads4", class: "Salads-Traditional card-styling", img: "https://i.ibb.co/sFkx8Bm/Gudeg-Jogja.png" },
+        Salads1: { name: "Gado-Gado",    id: "Salads-1", class: "Salads-Indonesian card-styling",  img: "https://i.ibb.co/q5910kb/Gado-gado.png" },
+        Salads2: { name: "Karedok",      id: "Salads-2", class: "Salads-Indonesian card-styling",  img: "https://i.ibb.co/pJph6nR/Karedok.png" },
+        Salads3: { name: "Pecel",        id: "Salads-3", class: "Salads-Indonesian card-styling",  img: "https://i.ibb.co/wrMYzWx/Pecel.png" },
+        Salads4: { name: "Gudeg Jogja",  id: "Salads-4", class: "Salads-Traditional card-styling", img: "https://i.ibb.co/sFkx8Bm/Gudeg-Jogja.png" },
         Salads5: { name: "Gudeg Solo",   id: "Salads5", class: "Salads-Traditional card-styling", img: "https://i.ibb.co/FBQ8ZJJ/Gudeg-Solo.png" },
         Salads6: { name: "Caesar Salad", id: "Salads6", class: "Salads-American card-styling",    img: "https://i.ibb.co/S6gdwkD/image.png" },
         Salads7: { name: "Green Salad",  id: "Salads7", class: "Salads-American card-styling",    img: "https://i.ibb.co/NLMgv6m/image.png" },
@@ -115,28 +115,17 @@ dropdown.addEventListener('change', () => {
                 wishlist.delete(newDiv.id);
                 newDiv.classList.remove('green');
             } else {
-                wishlist.add(newDiv.id);
-                newDiv.classList.add('green');
+                const counterWishlist = Array.from(wishlist);
+                if (counterWishlist.length === 5) {
+                    modal.showModal()
+                } else {  
+                    wishlist.add(newDiv.id);
+                    newDiv.classList.add('green');
+                }
             }
-            // console.log(newDiv);
             console.log(wishlist);
         })
-        // const newChildren = Array.from(newDiv.children);
-        // newChildren.forEach(el => {
-        //     el.addEventListener('click', (e) => {
-
-        //         e.stopPropagation();
-        //         if (wishlist.has(e.target.closest('div').id)) {
-        //             wishlist.delete(e.target.closest('div').id);
-        //             newDiv.classList.remove('green');
-        //         } else {
-        //             wishlist.add(e.target.closest('div').id);
-        //             newDiv.classList.add('green');
-        //         }
-        //     })          
-        // })
         display.append(newDiv);
-        console.log(wishlist);
     }
     //find how many class in a 1st key database
     const tempSet = new Set();
@@ -183,12 +172,37 @@ randomButton.addEventListener("click", function(event) {
         modal.showModal()
     } else {
         //remove all element/data in display section
+        display.setAttribute('class', 'randomizeActivated');
         const arrFilter = Array.from(filters.children);
         const arrDisplay = Array.from(display.children);
         document.querySelector("#dropdown-section").remove();
         arrFilter.forEach(el => el.remove());
         arrDisplay.forEach(el => el.remove());
         randomButton.remove();
+
+        //display element from wishlist
+        for (let id of wishlist) {
+        const tempArr3 = id.split('-');
+        // console.log(id);
+        console.log(database[tempArr3[0]]);
+        const newDiv = document.createElement('div');
+        newDiv.setAttribute('class', database[tempArr3[0]][id].class);
+        newDiv.setAttribute('id', database[tempArr3[0]][id].id);
+        const newImg = document.createElement('img');
+        newImg.setAttribute('src', database[tempArr3[0]][id].img);
+        const newDivChildren = document.createElement('div');
+        newDivChildren.setAttribute('class', 'card-info');
+        const newP = document.createElement('p');
+        newP.innerText = database[tempArr3[0]][id].name;
+        const newIcon = document.createElement('i');
+        newIcon.setAttribute('class', 'fa-solid fa-circle-check');
+        newIcon.setAttribute('style', 'color: #ffffff;');
+        newDivChildren.append(newP);
+        newDivChildren.append(newIcon);
+        newDiv.append(newImg);
+        newDiv.append(newDivChildren);
+        display.append(newDiv);
+        }
     }
 })
 closeModalButton.addEventListener("click", function(event) {
