@@ -1,0 +1,60 @@
+.box {
+    box-sizing: border-box;
+    height: 250px;
+    width: 250px;
+    background-color: aquamarine;
+    display: inline-block;
+    margin: 25px;
+}
+
+#dropdown-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+#dropdown {
+    padding: 10px;
+    background-color: aquamarine;
+    color: rgb(22, 55, 44);
+    width: 40%;
+}
+
+#filters {
+    display: flex;
+    justify-content: space-around;
+}
+
+.submit-button {
+    width: 20%;
+}
+
+.card-styling {
+    margin: 20px;
+    height: 150px;
+    width: 150px;
+    background-color: goldenrod;
+}
+
+#display {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.display-off {
+    position: absolute;
+    display: none;
+}
+
+.green {
+    background-color: green;
+}
+
+#randomize-section {
+    position: absolute;
+    bottom: 20%;
+    display: flex;
+    width: 99vw;
+    justify-content: center;
+}
