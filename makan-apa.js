@@ -117,21 +117,27 @@ dropdown.addEventListener('change', () => {
 //insert your code here
 // conditional if data < minimum length - Modal appears to notice user to choose again
 const minimumLength = 2;
-const closeModalButton = document.querySelector("[data-close-modal]")
-const modal = document.querySelector("[data-modal]")
-const dialog = document.querySelector("dialog")
+const closeModalButton = document.querySelector("[data-close-modal]");
+const modal = document.querySelector("[data-modal]");
+const dialog = document.querySelector("dialog");
 
-randomButton.addEventListener("click", function(event) {
+randomButton.addEventListener("click", (e) => {
     let tempArr = Array.from(wishlist)
-
     if (tempArr.length < minimumLength) {
-        modal.showModal()
+        modal.showModal();
+    } else {
+        //remove all element/data in display section
+        const arrFilter = Array.from(filters.children);
+        const arrDisplay = Array.from(display.children);
+        document.querySelector("#dropdown-section").remove();
+        arrFilter.forEach(el => el.remove());
+        arrDisplay.forEach(el => el.remove());
+        randomButton.remove();
     }
 })
 closeModalButton.addEventListener("click", function(event) {
-    modal.close()
+    modal.close();
 })
-    
 dialog.addEventListener("click", e => {
     const dialogDimensions = dialog.getBoundingClientRect()
     if (
@@ -140,6 +146,6 @@ dialog.addEventListener("click", e => {
         e.clientY < dialogDimensions.top ||
         e.clientY > dialogDimensions.bottom
     ) {
-        dialog.close()
+        dialog.close();
     }
     })
