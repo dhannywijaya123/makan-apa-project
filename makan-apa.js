@@ -117,54 +117,86 @@ dropdown.addEventListener('change', () => {
             } else {
                 const counterWishlist = Array.from(wishlist);
                 if (counterWishlist.length === 5) {
+                    const modal = document.querySelector("#max")
                     modal.showModal()
-                } else {  
-                    wishlist.add(newDiv.id);
-                    newDiv.classList.add('green');
-                }
-            }
-        })
-        display.append(newDiv);
-    }
-    //find how many class in a 1st key database
-    const tempSet = new Set();
-    for (let item in databaseVal) {
-        const tempArrClass = databaseVal[item].class.split(' ');
-        const tempArrClass2 = tempArrClass[0].split('-');
-        tempSet.add(tempArrClass2[1]); 
-    }
-    //make buttons based on how many classes are there
-    for (let filter2 of tempSet) {
-        const newButton = document.createElement('button');
-        newButton.setAttribute('id', filter2);
-        newButton.setAttribute('class', filter2);
-        newButton.innerText = filter2;
-        newButton.addEventListener('click', () => {
-        const childrenArr = Array.from(display.children);
-            childrenArr.forEach(el => {
-                const tempArrClass = el.className.split(' ');
-                const tempArrClass2 = tempArrClass[0].split('-');
-                if (tempArrClass2[1] === filter2) {
-                    el.classList.remove('display-off');
-                } else {
-                    el.classList.add('display-off');
+                    const closebutton = document.querySelector("#closemax")
+                    closebutton.addEventListener("click", function(event) {
+                        modal.close()
+                    })
+                    const dialog = document.querySelector("#max")
+                    dialog.addEventListener("click", e => {
+                        const dialogDimensions = dialog.getBoundingClientRect()
+                        if (
+                            e.clientX < dialogDimensions.left ||
+                            e.clientX > dialogDimensions.right ||
+                            e.clientY < dialogDimensions.top ||
+                            e.clientY > dialogDimensions.bottom
+                            ) {
+                                dialog.close()
+                            }
+                        })
+                    } else {  
+                        wishlist.add(newDiv.id);
+                        newDiv.classList.add('green');
+                    }
                 }
             })
-        })
-        filters.append(newButton);
-    }
-})
+            display.append(newDiv);
+        }
+        //find how many class in a 1st key database
+        const tempSet = new Set();
+        for (let item in databaseVal) {
+            const tempArrClass = databaseVal[item].class.split(' ');
+            const tempArrClass2 = tempArrClass[0].split('-');
+            tempSet.add(tempArrClass2[1]); 
+        }
 
-//insert your code here
-// conditional if data < minimum length - Modal appears to notice user to choose again
-const minimumLength = 2;
-const closeModalButton = document.querySelector("[data-close-modal]")
-const modal = document.querySelector("[data-modal]")
-const dialog = document.querySelector("dialog")
-
-randomButton.addEventListener("click", function(event) {
-    let tempArr = Array.from(wishlist)
-
+        let firstTime = true;
+        //make buttons based on how many classes are there
+        for (let filter2 of tempSet) {
+            const newButton = document.createElement('button');
+            newButton.setAttribute('id', filter2);
+            newButton.setAttribute('class', filter2);
+            newButton.innerText = filter2;
+            newButton.addEventListener('click', (e) => {
+                if (firstTime) {
+                    firstTime = false
+                    e.target.classList.add("selectedButton")
+                } else {
+                    let arrayButton = document.querySelectorAll("#filters button")
+                    for (let i = 0; i < arrayButton.length; i++) {
+                        if (arrayButton[i].id === e.target.id) {
+                            arrayButton[i].classList.add("selectedButton")
+                        } else {
+                            arrayButton[i].classList.remove("selectedButton")
+                        }
+                    }
+                }
+                const childrenArr = Array.from(display.children);
+                childrenArr.forEach(el => {
+                    const tempArrClass = el.className.split(' ');
+                    const tempArrClass2 = tempArrClass[0].split('-');
+                    if (tempArrClass2[1] === filter2) {
+                        el.classList.remove('display-off');
+                    } else {
+                        el.classList.add('display-off');
+                    }
+                })
+            })
+            filters.append(newButton);
+        }
+    })
+    
+    //insert your code here
+    // conditional if data < minimum length - Modal appears to notice user to choose again
+    const minimumLength = 2;
+    const closeModalButton = document.querySelector("[data-close-modal]")
+    const modal = document.querySelector("#min")
+    const dialog = document.querySelector("dialog")
+    
+    randomButton.addEventListener("click", function(event) {
+        let tempArr = Array.from(wishlist)
+        
     if (tempArr.length < minimumLength) {
         modal.showModal()
     } else {
