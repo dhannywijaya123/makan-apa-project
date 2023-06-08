@@ -64,23 +64,49 @@ const database = {
 };
 
 //create selectors
-const dropdown =  document.querySelector('#dropdown');
+const dropdown = document.querySelector('.dropdown');
 const filters = document.querySelector('#filters');
 const display = document.querySelector('#display');
 const wishlist = new Set();
 const randomButton = document.querySelector('#randomize-button');
+const menu = dropdown.querySelector('.menu');
 
-//create option buttons according to the database
+// create option buttons according to the database
 for (let key in database) {
-    const option = document.createElement('option');
-    option.setAttribute('value', key);
-    option.innerText = key;
-    dropdown.append(option);
+    const list = document.createElement('li');
+    list.setAttribute('value', key);
+    list.innerText = key;
+    menu.append(list);
 }
 
+//dropdown section
+const select = dropdown.querySelector('.select');
+const caret = dropdown.querySelector('i');
+const options = dropdown.querySelectorAll('.menu li');
+const selected = dropdown.querySelector('.selected');
+select.addEventListener('click', () => {
+    select.classList.toggle('select-clicked');
+    caret.classList.toggle('iRotate');
+    menu.classList.toggle('menu-open');
+})
+options.forEach(option => {
+    option.addEventListener('click', () => {
+        selected.innerText = option.innerText;
+        dropdown.setAttribute('value', option.innerText);
+        select.classList.remove('select-clicked');
+        caret.classList.remove('iRotate');
+        menu.classList.remove('menu-open');
+        options.forEach(option => {
+            option.classList.remove('active');
+        })
+        option.classList.add('active');
+    })
+})
+
+
 //do something when dropdown value is changed
-dropdown.addEventListener('change', () => {
-    const databaseVal = database[dropdown.value];
+options.forEach(option => option.addEventListener('click', (e) => {
+    const databaseVal = database[dropdown.getAttribute('value')];
     //delete the current buttons
     const buttons = document.querySelectorAll('#filters button')
     buttons.forEach(element => {
@@ -150,7 +176,8 @@ dropdown.addEventListener('change', () => {
             const tempArrClass2 = tempArrClass[0].split('-');
             tempSet.add(tempArrClass2[1]); 
         }
-
+        console.log(tempSet);
+        
         let firstTime = true;
         //make buttons based on how many classes are there
         for (let filter2 of tempSet) {
@@ -185,26 +212,28 @@ dropdown.addEventListener('change', () => {
             })
             filters.append(newButton);
         }
-    })
+}))
+
+//insert your code here
+// conditional if data < minimum length - Modal appears to notice user to choose again
+const minimumLength = 2;
+const closeModalButton = document.querySelector("[data-close-modal]")
+const modal = document.querySelector("#min")
+const dialog = document.querySelector("dialog")
     
-    //insert your code here
-    // conditional if data < minimum length - Modal appears to notice user to choose again
-    const minimumLength = 2;
-    const closeModalButton = document.querySelector("[data-close-modal]")
-    const modal = document.querySelector("#min")
-    const dialog = document.querySelector("dialog")
+randomButton.addEventListener("click", function(event) {
+    let tempArr = Array.from(wishlist)
     
-    randomButton.addEventListener("click", function(event) {
-        let tempArr = Array.from(wishlist)
-        
     if (tempArr.length < minimumLength) {
         modal.showModal()
     } else {
         //remove all element/data in display section
         display.setAttribute('class', 'randomizeActivated');
+        display.removeAttribute("id")
         const arrFilter = Array.from(filters.children);
         const arrDisplay = Array.from(display.children);
-        document.querySelector("#dropdown-section").remove();
+        dropdown.remove();
+        console.log(arrDisplay);
         arrFilter.forEach(el => el.remove());
         arrDisplay.forEach(el => el.remove());
         randomButton.remove();
@@ -245,7 +274,7 @@ dropdown.addEventListener('change', () => {
                     randomNum = Math.floor(Math.random()*contents.length);
                     if (randomNum !== previousNum) {break}
                 }
-                contents[randomNum].style.border = "2px solid #333";
+                contents[randomNum].style.border = "1px solid #333";
                 if (previousNum !== undefined) {
                     contents[previousNum].style.border = "none";
                 }
@@ -263,9 +292,6 @@ dropdown.addEventListener('change', () => {
                 setTimeout(loop, delay)
             })();
         }, 1000)
-
-
-    
     }
 })
 closeModalButton.addEventListener("click", function(event) {
