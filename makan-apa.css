@@ -32,8 +32,8 @@
 
 .card-styling {
     margin: 20px;
-    height: 150px;
-    width: 150px;
+    height: 320px;
+    width: 300px;
     background-color: goldenrod;
 }
 
@@ -57,4 +57,67 @@
     display: flex;
     width: 99vw;
     justify-content: center;
+}
+
+.card-info {
+    display: flex;
+}
+
+.card-styling{
+    width: 300px;
+    height: 320px;
+    display: flex;
+    position: relative;
+    background-color: transparent;
+  
+  }
+  
+  .card-styling img{
+    width: 300px;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 10px 10px 15px 15px;
+    box-shadow: 5px 6px 10px rgba(0, 0, 0, 0.15);
+  
+  }
+  
+  .card-styling p{
+    font-weight: bold;
+    color: black;
+    margin-left: 15px;
+    
+  }
+  
+  .card-styling div{
+    display: flex;
+    background-color: #D4D4D4;
+    justify-content: space-between;
+    position: absolute;
+    width: 300px;
+    height: 50px;
+    opacity: 0.95;
+    border-radius: 0px 0px 15px 15px;
+    bottom: 0;
+  }
+  
+  .card-styling i{
+    opacity: 0;
+  }
+  
+  .green div{
+    background-color: green;
+  }
+  
+  .green p{
+    color: white;
+  }
+  
+  .green i{
+    opacity: 1;
+    margin-right: 15px;
+  }
+
+  .display-off {
+    position: absolute;
+    display: none;
 }
