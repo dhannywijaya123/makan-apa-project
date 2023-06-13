@@ -8,13 +8,13 @@ const database = {
         "Rice&Noodle-6": { name: "Mie Goreng",  id: "Rice&Noodle-6", class: "Rice&Noodle-Mie card-styling",   img: "https://i.ibb.co/kmrzbrC/Mie-Goreng.png" },
         "Rice&Noodle-7": { name: "Mie Ayam",    id: "Rice&Noodle-7", class: "Rice&Noodle-Mie card-styling",   img: "https://i.ibb.co/sH3WCJ5/Mie-Ayam.png" },
         "Rice&Noodle-8": { name: "Mie Aceh",    id: "Rice&Noodle-8", class: "Rice&Noodle-Kuah card-styling",  img: "https://i.ibb.co/HnX0jBY/Mie-Aceh.png" },
-        "Rice&Noodle-9": { name: "Mie Jawa",    id: "Rice&Noodle-9", class: "Rice&Noodle-Mie card-styling",   img: "https://i.ibb.co/fN8rSjr/Mie-Jawa.png" },
+        "Rice&Noodle-9": { name: "Mie Jawa",    id: "Rice&Noodle-9", class: "Rice&Noodle-Kuah card-styling",   img: "https://i.ibb.co/g4YHsRq/Bakmi-Jawa.png" },
         "Rice&Noodle-10": { name: "Mie Bakso",  id: "Rice&Noodle-10", class: "Rice&Noodle-Kuah card-styling", img: "https://i.ibb.co/bNftSJF/Mie-Bakso.png" }
     },
     Salads: {
         "Salads-1": { name: "Gado-Gado",    id: "Salads-1", class: "Salads-Indonesian card-styling",  img: "https://i.ibb.co/q5910kb/Gado-gado.png" },
         "Salads-2": { name: "Karedok",      id: "Salads-2", class: "Salads-Indonesian card-styling",  img: "https://i.ibb.co/pJph6nR/Karedok.png" },
-        "Salads-3": { name: "Pecel",        id: "Salads-3", class: "Salads-Indonesian card-styling",  img: "https://i.ibb.co/wrMYzWx/Pecel.png" },
+        "Salads-3": { name: "Pecel",        id: "Salads-3", class: "Salads-Indonesian card-styling",  img: "https://i.ibb.co/PG5PDgV/Pecel.png" },
         "Salads-4": { name: "Gudeg Jogja",  id: "Salads-4", class: "Salads-Traditional card-styling", img: "https://i.ibb.co/sFkx8Bm/Gudeg-Jogja.png" },
         "Salads-5": { name: "Gudeg Solo",   id: "Salads-5", class: "Salads-Traditional card-styling", img: "https://i.ibb.co/FBQ8ZJJ/Gudeg-Solo.png" },
         "Salads-6": { name: "Caesar Salad", id: "Salads-6", class: "Salads-American card-styling",    img: "https://i.ibb.co/S6gdwkD/image.png" },
@@ -54,7 +54,7 @@ const database = {
     },
     CitizenChoose: {
         "CitizenChoose-1": { name: "Pempek Palembang",    id: "CitizenChoose-1", class: "CitizenChoose-Spicy card-styling", img: "https://i.ibb.co/QYL0XBc/Pempek-Palembang.png" },
-        "CitizenChoose-2": { name: "Pempek Kapal Selam",  id: "CitizenChoose-2", class: "CitizenChoose-Spicy card-styling", img: "https://i.ibb.co/r6qRvZP/Pempek-Kapal-Selam.png" },
+        "CitizenChoose-2": { name: "Pempek Kapal Selam",  id: "CitizenChoose-2", class: "CitizenChoose-Spicy card-styling", img: "https://i.ibb.co/mD1t8t0/Pempek-Kapal-Selam.png" },
         "CitizenChoose-3": { name: "Nasi Goreng Kampung", id: "CitizenChoose-3", class: "CitizenChoose-Popular card-styling", img: "https://i.ibb.co/y82pdZw/Nasi-goreng-kampung.png" },
         "CitizenChoose-4": { name: "Nasi Goreng Seafood", id: "CitizenChoose-4", class: "CitizenChoose-Popular card-styling", img: "https://i.ibb.co/0C1xvBK/Nasi-Goreng-Seafood.png" },
         "CitizenChoose-5": { name: "Rendang Sapi",        id: "CitizenChoose-5", class: "CitizenChoose-Hype card-styling", img: "https://i.ibb.co/3swRRh8/Rendang-Sapi.png" },
@@ -73,10 +73,10 @@ const menu = dropdown.querySelector('.menu');
 
 // create option buttons according to the database
 for (let key in database) {
-    const list = document.createElement('li');
-    list.setAttribute('value', key);
-    list.innerText = key;
-    menu.append(list);
+  const list = document.createElement('li');
+  list.setAttribute('value', key);
+  list.innerText = key;
+  menu.append(list);
 }
 
 //dropdown section
@@ -85,133 +85,191 @@ const caret = dropdown.querySelector('i');
 const options = dropdown.querySelectorAll('.menu li');
 const selected = dropdown.querySelector('.selected');
 select.addEventListener('click', () => {
-    select.classList.toggle('select-clicked');
-    caret.classList.toggle('iRotate');
-    menu.classList.toggle('menu-open');
+  select.classList.toggle('select-clicked');
+  caret.classList.toggle('iRotate');
+  menu.classList.toggle('menu-open');
 })
 options.forEach(option => {
-    option.addEventListener('click', () => {
-        selected.innerText = option.innerText;
-        dropdown.setAttribute('value', option.innerText);
-        select.classList.remove('select-clicked');
-        caret.classList.remove('iRotate');
-        menu.classList.remove('menu-open');
-        options.forEach(option => {
-            option.classList.remove('active');
-        })
-        option.classList.add('active');
-    })
+  option.addEventListener('click', () => {
+      selected.innerText = option.innerText;
+      dropdown.setAttribute('value', option.innerText);
+      select.classList.remove('select-clicked');
+      caret.classList.remove('iRotate');
+      menu.classList.remove('menu-open');
+      options.forEach(option => {
+          option.classList.remove('active');
+      })
+      option.classList.add('active');
+  })
 })
 
 
 //do something when dropdown value is changed
 options.forEach(option => option.addEventListener('click', (e) => {
-    const databaseVal = database[dropdown.getAttribute('value')];
-    //delete the current buttons
-    const buttons = document.querySelectorAll('#filters button')
-    buttons.forEach(element => {
-        element.remove();
-    });
-    //delete the current elements
-    const deleteArr = Array.from(display.children);
-    deleteArr.forEach(el => el.remove())
-    //add the new elements to the display;
-    for (let item in databaseVal) {
-        const newDiv = document.createElement('div');
-        newDiv.setAttribute('class', databaseVal[item].class);
-        newDiv.setAttribute('id', databaseVal[item].id);
-        if (wishlist.has(newDiv.id)) {
-            newDiv.classList.add('green');
-        }
-        const newImg = document.createElement('img');
-        newImg.setAttribute('src', databaseVal[item].img);
-        const newDivChildren = document.createElement('div');
-        newDivChildren.setAttribute('class', 'card-info');
-        const newP = document.createElement('p');
-        newP.innerText = databaseVal[item].name;
-        const newIcon = document.createElement('i');
-        newIcon.setAttribute('class', 'fa-solid fa-circle-check');
-        newIcon.setAttribute('style', 'color: #ffffff;');
-        newDivChildren.append(newP);
-        newDivChildren.append(newIcon);
-        newDiv.append(newImg);
-        newDiv.append(newDivChildren);
-        newDiv.addEventListener('click', (e) => {
-            if (wishlist.has(newDiv.id)) {
-                wishlist.delete(newDiv.id);
-                newDiv.classList.remove('green');
-            } else {
-                const counterWishlist = Array.from(wishlist);
-                if (counterWishlist.length === 5) {
-                    const modal = document.querySelector("#max")
-                    modal.showModal()
-                    const closebutton = document.querySelector("#closemax")
-                    closebutton.addEventListener("click", function(event) {
-                        modal.close()
-                    })
-                    const dialog = document.querySelector("#max")
-                    dialog.addEventListener("click", e => {
-                        const dialogDimensions = dialog.getBoundingClientRect()
-                        if (
-                            e.clientX < dialogDimensions.left ||
-                            e.clientX > dialogDimensions.right ||
-                            e.clientY < dialogDimensions.top ||
-                            e.clientY > dialogDimensions.bottom
-                            ) {
-                                dialog.close()
-                            }
-                        })
-                    } else {  
-                        wishlist.add(newDiv.id);
-                        newDiv.classList.add('green');
-                    }
-                }
-            })
-            display.append(newDiv);
-        }
-        //find how many class in a 1st key database
-        const tempSet = new Set();
-        for (let item in databaseVal) {
-            const tempArrClass = databaseVal[item].class.split(' ');
-            const tempArrClass2 = tempArrClass[0].split('-');
-            tempSet.add(tempArrClass2[1]); 
-        }
-        console.log(tempSet);
-        
-        let firstTime = true;
-        //make buttons based on how many classes are there
-        for (let filter2 of tempSet) {
-            const newButton = document.createElement('button');
-            newButton.setAttribute('id', filter2);
-            newButton.setAttribute('class', filter2);
-            newButton.innerText = filter2;
-            newButton.addEventListener('click', (e) => {
-                if (firstTime) {
-                    firstTime = false
-                    e.target.classList.add("selectedButton")
-                } else {
-                    let arrayButton = document.querySelectorAll("#filters button")
-                    for (let i = 0; i < arrayButton.length; i++) {
-                        if (arrayButton[i].id === e.target.id) {
-                            arrayButton[i].classList.add("selectedButton")
-                        } else {
-                            arrayButton[i].classList.remove("selectedButton")
-                        }
-                    }
-                }
-                const childrenArr = Array.from(display.children);
-                childrenArr.forEach(el => {
-                    const tempArrClass = el.className.split(' ');
-                    const tempArrClass2 = tempArrClass[0].split('-');
-                    if (tempArrClass2[1] === filter2) {
-                        el.classList.remove('display-off');
-                    } else {
-                        el.classList.add('display-off');
-                    }
-                })
-            })
-            filters.append(newButton);
-        }
+  const databaseVal = database[dropdown.getAttribute('value')];
+  //delete the current buttons
+  const buttons = document.querySelectorAll('#filters button')
+  buttons.forEach(element => {
+      element.remove();
+  });
+  //delete the current elements
+  const deleteArr = Array.from(display.children);
+  deleteArr.forEach(el => el.remove())
+  //add the new elements to the display;
+  for (let item in databaseVal) {
+      const newDiv = document.createElement('div');
+      newDiv.setAttribute('class', databaseVal[item].class);
+      newDiv.setAttribute('id', databaseVal[item].id);
+      if (wishlist.has(newDiv.id)) {
+          newDiv.classList.add('green');
+      }
+      const newImg = document.createElement('img');
+      newImg.setAttribute('src', databaseVal[item].img);
+      const newDivChildren = document.createElement('div');
+      newDivChildren.setAttribute('class', 'card-info');
+      const newP = document.createElement('p');
+      newP.innerText = databaseVal[item].name;
+      const newIcon = document.createElement('i');
+      newIcon.setAttribute('class', 'fa-solid fa-circle-check');
+      newIcon.setAttribute('style', 'color: #ffffff;');
+      newDivChildren.append(newP);
+      newDivChildren.append(newIcon);
+      newDiv.append(newImg);
+      newDiv.append(newDivChildren);
+      newDiv.addEventListener('click', (e) => {
+          if (wishlist.has(newDiv.id)) {
+              wishlist.delete(newDiv.id);
+              newDiv.classList.remove('green');
+          } else {
+              const counterWishlist = Array.from(wishlist);
+              if (counterWishlist.length >= 5) {
+                  const modal = document.querySelector("#max")
+  //                 <!-- <div>Pilihannya kebanyakan</div> -->
+  //   <!-- <button id="closemax" data-close-modal>maksimal 5 pilihan</button> -->
+                  //generate gambar2
+                  const containerDialog = document.createElement('div');
+                  containerDialog.classList.add('testing');
+                  for (let id2 of wishlist) {
+                      const tempArr4 = id2.split('-');
+                      const divDialog = document.createElement('div');
+                      divDialog.setAttribute('class', database[tempArr4[0]][id2].class);
+                      divDialog.setAttribute('id', database[tempArr4[0]][id2].id);
+                      divDialog.classList.add('green');
+                      console.log(divDialog);
+                      const newImg2 = document.createElement('img');
+                      newImg2.setAttribute('src', database[tempArr4[0]][id2].img);
+                      const divDialogChildren = document.createElement('div');
+                      divDialogChildren.setAttribute('class', 'card-info');
+                      const newP2 = document.createElement('p');
+                      newP2.innerText = database[tempArr4[0]][id2].name;
+                      const newIcon2 = document.createElement('i');
+                      newIcon2.setAttribute('class', 'fa-solid fa-circle-check');
+                      newIcon2.setAttribute('style', 'color: #ffffff;');
+                      divDialogChildren.append(newP2);
+                      divDialogChildren.append(newIcon2);
+                      divDialog.append(newImg2);
+                      divDialog.append(divDialogChildren);
+                      divDialog.addEventListener('click', () => {
+                          divDialog.classList.toggle('green')
+                          if (wishlist.has(divDialog.id)) {
+                              wishlist.delete(divDialog.id);
+                          } else {
+                              wishlist.add(divDialog.id);
+                          }
+                      })
+                      containerDialog.append(divDialog);
+                  }
+                  modal.append(containerDialog);
+                  //bikin button
+                  const closebutton = document.createElement('button');
+                  closebutton.setAttribute('id', 'closemax');
+                  closebutton.innerText = 'maksimal 5 pilihan';
+                  modal.append(closebutton);
+                  modal.showModal()
+                  // const closebutton = document.querySelector("#closemax")
+                  closebutton.addEventListener("click", function(event) {
+                      console.log(wishlist);
+                      const anakDialog = Array.from(modal.children);
+                      anakDialog.forEach(anak => anak.remove());
+                      const anakDisplay = Array.from(display.children);
+                      anakDisplay.forEach(anak => {
+                          if (!wishlist.has(anak.id)) {
+                              anak.classList.remove('green');
+                          }
+                      })
+                      modal.close()
+                  })
+                  const dialog = document.querySelector("#max")
+                  dialog.addEventListener("click", e => {
+                      const dialogDimensions = dialog.getBoundingClientRect()
+                      if (
+                          e.clientX < dialogDimensions.left ||
+                          e.clientX > dialogDimensions.right ||
+                          e.clientY < dialogDimensions.top ||
+                          e.clientY > dialogDimensions.bottom
+                          ) {
+                              console.log(wishlist);
+                              const anakDialog = Array.from(modal.children);
+                              anakDialog.forEach(anak => anak.remove());
+                              const anakDisplay = Array.from(display.children);
+                              anakDisplay.forEach(anak => {
+                                  if (!wishlist.has(anak.id)) {
+                                  anak.classList.remove('green');
+                                  }
+                              })
+                              dialog.close()
+                          }
+                      })
+                  } else {  
+                      wishlist.add(newDiv.id);
+                      newDiv.classList.add('green');
+                  }
+              }
+          })
+          display.append(newDiv);
+      }
+      //find how many class in a 1st key database
+      const tempSet = new Set();
+      for (let item in databaseVal) {
+          const tempArrClass = databaseVal[item].class.split(' ');
+          const tempArrClass2 = tempArrClass[0].split('-');
+          tempSet.add(tempArrClass2[1]); 
+      }
+      
+      let firstTime = true;
+      //make buttons based on how many classes are there
+      for (let filter2 of tempSet) {
+          const newButton = document.createElement('button');
+          newButton.setAttribute('id', filter2);
+          newButton.setAttribute('class', filter2);
+          newButton.innerText = filter2;
+          newButton.addEventListener('click', (e) => {
+              if (firstTime) {
+                  firstTime = false
+                  e.target.classList.add("selectedButton")
+              } else {
+                  let arrayButton = document.querySelectorAll("#filters button")
+                  for (let i = 0; i < arrayButton.length; i++) {
+                      if (arrayButton[i].id === e.target.id) {
+                          arrayButton[i].classList.add("selectedButton")
+                      } else {
+                          arrayButton[i].classList.remove("selectedButton")
+                      }
+                  }
+              }
+              const childrenArr = Array.from(display.children);
+              childrenArr.forEach(el => {
+                  const tempArrClass = el.className.split(' ');
+                  const tempArrClass2 = tempArrClass[0].split('-');
+                  if (tempArrClass2[1] === filter2) {
+                      el.classList.remove('display-off');
+                  } else {
+                      el.classList.add('display-off');
+                  }
+              })
+          })
+          filters.append(newButton);
+      }
 }))
 
 //insert your code here
@@ -220,92 +278,92 @@ const minimumLength = 2;
 const closeModalButton = document.querySelector("[data-close-modal]")
 const modal = document.querySelector("#min")
 const dialog = document.querySelector("dialog")
-    
+  
 randomButton.addEventListener("click", function(event) {
-    let tempArr = Array.from(wishlist)
-    
-    if (tempArr.length < minimumLength) {
-        modal.showModal()
-    } else {
-        //remove all element/data in display section
-        display.setAttribute('class', 'randomizeActivated');
-        display.removeAttribute("id")
-        const arrFilter = Array.from(filters.children);
-        const arrDisplay = Array.from(display.children);
-        dropdown.remove();
-        console.log(arrDisplay);
-        arrFilter.forEach(el => el.remove());
-        arrDisplay.forEach(el => el.remove());
-        randomButton.remove();
+  let tempArr = Array.from(wishlist)
+  
+  if (tempArr.length < minimumLength) {
+      modal.showModal()
+  } else {
+      //remove all element/data in display section
+      display.setAttribute('class', 'randomizeActivated');
+      display.removeAttribute("id")
+      const arrFilter = Array.from(filters.children);
+      const arrDisplay = Array.from(display.children);
+      dropdown.remove();
+      console.log(arrDisplay);
+      arrFilter.forEach(el => el.remove());
+      arrDisplay.forEach(el => el.remove());
+      randomButton.remove();
 
-        //display element from wishlist
-        for (let id of wishlist) {
-        const tempArr3 = id.split('-');
-        const newDiv = document.createElement('div');
-        newDiv.setAttribute('class', database[tempArr3[0]][id].class);
-        newDiv.setAttribute('id', database[tempArr3[0]][id].id);
-        const newImg = document.createElement('img');
-        newImg.setAttribute('src', database[tempArr3[0]][id].img);
-        const newDivChildren = document.createElement('div');
-        newDivChildren.setAttribute('class', 'card-info');
-        const newP = document.createElement('p');
-        newP.innerText = database[tempArr3[0]][id].name;
-        const newIcon = document.createElement('i');
-        newIcon.setAttribute('class', 'fa-solid fa-circle-check');
-        newIcon.setAttribute('style', 'color: #ffffff;');
-        newDivChildren.append(newP);
-        newDivChildren.append(newIcon);
-        newDiv.append(newImg);
-        newDiv.append(newDivChildren);
-        display.append(newDiv);
-        }
+      //display element from wishlist
+      for (let id of wishlist) {
+      const tempArr3 = id.split('-');
+      const newDiv = document.createElement('div');
+      newDiv.setAttribute('class', database[tempArr3[0]][id].class);
+      newDiv.setAttribute('id', database[tempArr3[0]][id].id);
+      const newImg = document.createElement('img');
+      newImg.setAttribute('src', database[tempArr3[0]][id].img);
+      const newDivChildren = document.createElement('div');
+      newDivChildren.setAttribute('class', 'card-info');
+      const newP = document.createElement('p');
+      newP.innerText = database[tempArr3[0]][id].name;
+      const newIcon = document.createElement('i');
+      newIcon.setAttribute('class', 'fa-solid fa-circle-check');
+      newIcon.setAttribute('style', 'color: #ffffff;');
+      newDivChildren.append(newP);
+      newDivChildren.append(newIcon);
+      newDiv.append(newImg);
+      newDiv.append(newDivChildren);
+      display.append(newDiv);
+      }
 
-        setTimeout(() => {
-            const contents = document.querySelectorAll('.card-styling');
-            console.log(contents);
-            
-            let delay = 1000;
-            let timerCounter = 0;
-            let previousNum;
+      setTimeout(() => {
+          const contents = document.querySelectorAll('.card-styling');
+          console.log(contents);
+          
+          let delay = 1000;
+          let timerCounter = 0;
+          let previousNum;
 
-            (function loop () {
-                let randomNum;
-                while (true) {
-                    randomNum = Math.floor(Math.random()*contents.length);
-                    if (randomNum !== previousNum) {break}
-                }
-                contents[randomNum].style.border = "1px solid #333";
-                if (previousNum !== undefined) {
-                    contents[previousNum].style.border = "none";
-                }
-                previousNum = randomNum;
-                if (delay >= 400) {
-                    delay -= 135;
-                } else if (delay >= 100) {
-                    delay -= 30;
-                }
-                timerCounter += delay;
-                console.log(randomNum);
-                if (timerCounter >= 5999) {
-                    return
-                }
-                setTimeout(loop, delay)
-            })();
-        }, 1000)
-    }
+          (function loop () {
+              let randomNum;
+              while (true) {
+                  randomNum = Math.floor(Math.random()*contents.length);
+                  if (randomNum !== previousNum) {break}
+              }
+              contents[randomNum].style.border = "5px solid #F29B38";
+              if (previousNum !== undefined) {
+                  contents[previousNum].style.border = "none";
+              }
+              previousNum = randomNum;
+              if (delay >= 400) {
+                  delay -= 135;
+              } else if (delay >= 100) {
+                  delay -= 30;
+              }
+              timerCounter += delay;
+              console.log(randomNum);
+              if (timerCounter >= 5999) {
+                  return
+              }
+              setTimeout(loop, delay)
+          })();
+      }, 1000)
+  }
 })
 closeModalButton.addEventListener("click", function(event) {
-    modal.close()
+  modal.close()
 })
-    
+  
 dialog.addEventListener("click", e => {
-    const dialogDimensions = dialog.getBoundingClientRect()
-    if (
-        e.clientX < dialogDimensions.left ||
-        e.clientX > dialogDimensions.right ||
-        e.clientY < dialogDimensions.top ||
-        e.clientY > dialogDimensions.bottom
-    ) {
-        dialog.close()
-    }
+  const dialogDimensions = dialog.getBoundingClientRect()
+  if (
+      e.clientX < dialogDimensions.left ||
+      e.clientX > dialogDimensions.right ||
+      e.clientY < dialogDimensions.top ||
+      e.clientY > dialogDimensions.bottom
+  ) {
+      dialog.close()
+  }
 })
